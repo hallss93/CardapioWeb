@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Hallison Melo</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/examples/justified-nav/justified-nav.css" rel="stylesheet">
+    <script src="https://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<link rel="stylesheet" href="assets/css/styles.css">
+	<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/template.js"></script>
+	<script src="/assets/js/jS.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>	
+</head>
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
+<main id="main">
+	<div class="container">
+		<div class="row section topspace ">
+			
+			<h2 class="section-title"><span>Editar Cardápio</span></h2>
+		</div> 
+<div class="col-md-8">
+  <div class="campoEditar col-sm-6 col-md-4"  *ngFor="let item of cardapios"  id={{item.id}}>
+    <div>
+      <img (click)=editar(item.id) class="imagem" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
+    </div>
+      <div class="caption">
+        <h3 > {{item.nome}}</h3>
+        <p style="font-size: 20px"><strong>Valor: R$</strong> <small>{{item.valor}}</small><br>{{item.descricao}}</p>
+      </div>
+  </div>
+</div>
+<div class="col-md-4 campoEditar">
+  	
+				<h2 class="section-title"><span>Atualize as Informações</span></h2>
+			<div class="col-sm-12">
+      <input type="hidden" class="form-control"  id="id">
+			<h5>Nome</h5>
+			<input type="text" class="form-control" placeholder="" id="nome" value="">
+			<div class="row col-sm-6">
+			<h5>Valor</h5>
+			<input type="text" class="form-control" placeholder="" id="valor" value="">
+			</div>
+			<div class="col-md-1"></div>
+			<div class="row col-sm-6">
+			<h5>Descrição</h5>
+			<input type="text" class="form-control" placeholder="" id="descricao" value="">
+			</div>
+			<div class="row"></div>
+
+<div class=" section topspace row">
+		<button class="btn btn-info navbar-btn" id="salvar" (click)=salva()>Salvar</button>
+		<button class="btn btn-primary navbar-btn" (click)=limpar() id="limpar">Limpar</button>
+    <button class="btn btn-danger navbar-btn" (click)=remove() id="apagar">Apagar</button>
+		
+		</div>
+			
+			</div>
+
+</div>
+
+	</div>	<!-- /container -->
+
+</main>
+
+
+<footer id="underfooter">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p>Produção é o nosso negócio.</p>
+				</div>
+			</div>
+
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p class="text-right">
+						Copyright &copy; 2017, Hallison Melo<br> 
+						Design for us <br>
+						Template baseado em: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> </p>
+				</div>
+			</div>
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>
+</html>
