@@ -18,6 +18,4 @@ constructor(){
   };
   firebase.initializeApp(config);
 }
-
-
 }
